@@ -190,6 +190,8 @@ def is_clean_candidate(item):
 
 def classify_economic_status(text, payment_hits, label_names=None):
     """Classify whether a candidate is actually actionable economic work."""
+    if text is None:
+        text = ""
     label_names = set(label_names or [])
 
     already_implemented_terms = [
